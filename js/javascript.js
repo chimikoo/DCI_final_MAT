@@ -14,3 +14,27 @@ window.onscroll = function() {scrollFunction()};
       }
     }
 
+    /* Snap scrolling effect */
+    const sections = document.querySelectorAll("section");
+    let currentSectionIndex = 0;
+    
+    function scrollToSection(sectionIndex) {
+      sections[sectionIndex].scrollIntoView({
+        behavior: "smooth"
+      });
+    }
+    
+    document.addEventListener("wheel", event => {
+      const direction = event.deltaY > 0 ? 1 : -1;
+      currentSectionIndex += direction;
+      
+      if (currentSectionIndex < 0) {
+        currentSectionIndex = 0;
+      }
+      
+      if (currentSectionIndex > sections.length - 1) {
+        currentSectionIndex = sections.length - 1;
+      }
+      
+      scrollToSection(currentSectionIndex);
+    });
