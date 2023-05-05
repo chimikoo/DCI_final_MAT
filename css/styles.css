@@ -40,15 +40,15 @@ h2 {
   font-family: "Syncopate", sans-serif;
   color: white;
   text-transform: uppercase;
-  letter-spacing: 3vw;
+  letter-spacing: 10px;
   line-height: 1.2;
-  font-size: 3vw;
+  font-size: 40px;
   text-align: center;
 }
 h2 span {
   display: block;
-  font-size: 10vw;
-  letter-spacing: -1.3vw;
+  font-size: 100px;
+  letter-spacing: -5px;
 }
 
 /* main styling */
@@ -61,43 +61,6 @@ main {
   margin: 0 auto;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-}
-
-/* Container position */
-.button-container {
-  text-align: center;
-}
-
-/* Button wrapper and container styled */
-.button-wrapper {
-  color: rgb(100, 95, 95);
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  font-size: 1rem;
-  font-weight: bold;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  margin: 10px;
-  transition: transform 0.3s ease-in-out;
-}
-
-/* Hover effect */
-.button-wrapper:hover {
-  background-color: rgba(158, 157, 157, 0.2);
-  transform: translateY(-5px);
-}
-
-/* Hover effect button*/
-.button-style:hover {
-  text-decoration: none;
-}
-
-/* Another button style*/
-.button-style {
-  text-decoration: none;
-  color: white;
 }
 
 /* Paragraph container and style */
