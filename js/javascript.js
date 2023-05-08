@@ -1,40 +1,27 @@
-
-    /* This function slows down the video by 15% 1 being 100% */
+/* This function slows down the video by 15% 1 being 100% */
 const video = document.getElementById("background-video");
-    video.playbackRate = .85;
+const container = document.getElementById("scroll-listener");
+const button = document.getElementById("back-to-top-button");
+let scrollTop;
 
-    /* This is a function to make the to the top button appear */
-window.onscroll = function() {scrollFunction()};
+const scrollFunction = () => {
+  if (scrollTop > 100) {
+    button.style.display = "flex";
+  } else {
+    button.style.display = "none";
+  }
+};
 
-    function scrollFunction() {
-      if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-        document.getElementById("back-to-top-button").style.display = "block";
-      } else {
-        document.getElementById("back-to-top-button").style.display = "none";
-      }
-    }
+container.addEventListener("scroll", () => {
+  scrollTop = container.scrollTop;
+  scrollFunction();
+});
+button.addEventListener("click", () => {
+  container.scrollTo({
+    top: 0,
+    left: 0,
+    behavior: "smooth",
+  });
+});
 
-    /* Snap scrolling effect */
-    const sections = document.querySelectorAll("section");
-    let currentSectionIndex = 0;
-    
-    function scrollToSection(sectionIndex) {
-      sections[sectionIndex].scrollIntoView({
-        behavior: "smooth"
-      });
-    }
-    
-    document.addEventListener("wheel", event => {
-      const direction = event.deltaY > 0 ? 1 : -1;
-      currentSectionIndex += direction;
-      
-      if (currentSectionIndex < 0) {
-        currentSectionIndex = 0;
-      }
-      
-      if (currentSectionIndex > sections.length - 1) {
-        currentSectionIndex = sections.length - 1;
-      }
-      
-      scrollToSection(currentSectionIndex);
-    });
+video.playbackRate = 0.85;
