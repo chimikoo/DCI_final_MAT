@@ -17,7 +17,11 @@ container.addEventListener("scroll", () => {
   scrollFunction();
 });
 button.addEventListener("click", () => {
-  container.scrollTop = 0;
+  container.scrollTo({
+    top: 0,
+    left: 0,
+    behavior: "smooth",
+  });
 });
 
 video.playbackRate = 0.85;
