@@ -12,13 +12,12 @@ const scrollFunction = () => {
   }
 };
 
-container.addEventListener("wheel", () => {
+container.addEventListener("scroll", () => {
   scrollTop = container.scrollTop;
   scrollFunction();
 });
 button.addEventListener("click", () => {
   container.scrollTop = 0;
-  button.style.display = "none";
 });
 
 video.playbackRate = 0.85;
