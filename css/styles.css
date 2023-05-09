@@ -143,4 +143,97 @@ body {
   content: "🡅";
 }
 
+#img-container {
+  background: rgba(0, 0, 0, 0.66);
+  position: relative;
+  color: white;
+  padding: 1rem;
+  max-width: 100vh;
+  margin: 0 auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  padding-right: 30px;
+  padding-left: 30px;
+  padding-bottom: 1px;
+}
+
+/* Slider container */
+.sliders {
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* Slider images */
+.sliders img {
+  width: 100%;
+  height: 500px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+/* Arrows */
+.slick-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+  display: block;
+  width: 30px;
+  height: 30px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.slick-arrow:before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: url("https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.png") no-repeat;
+}
+
+.slick-prev:before {
+  background-position: -10px -40px;
+  left: 20px;
+}
+
+.slick-next:before {
+  background-position: -40px -40px;
+  right: 20px;
+}
+
+/* Dots */
+.slick-dots {
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slick-dots li {
+  margin: 0 5px;
+  color: red;
+}
+
+.slick-dots li button {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #dd1212;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.slick-dots li.slick-active button {
+  background: whitesmoke;
+}
+
 /*# sourceMappingURL=styles.css.map */

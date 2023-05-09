@@ -29,3 +29,18 @@ button.addEventListener("click", () => {
 /* This function slows down the video by 15% 1 being 100% */
 
 video.playbackRate = 0.85;
+
+/* Auto-scroller */
+
+$(document).ready(function(){
+  $('.sliders').slick({
+    autoplay: true,
+    autoplaySpeed: 1000,
+    dots: true,
+    arrows: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1
+  });
+});
