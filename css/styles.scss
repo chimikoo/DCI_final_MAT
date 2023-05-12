@@ -26,11 +26,13 @@ body {
   margin: 0;
 }
 
+/* CSS Snap scrolling */
 .web-container {
   max-height: 100vh;
   overflow-y: scroll;
   scroll-snap-type: y mandatory;
 }
+
 section {
   scroll-snap-align: center;
 }
@@ -234,3 +236,58 @@ body {
   background: whitesmoke;
 }
 /*# sourceMappingURL=styles.css.map */
+
+/* test */
+
+nav {
+  position: fixed;
+  top:0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  padding: 10px 60px;
+  box-sizing: border-box;
+  transition: .5s;
+  z-index: 99;
+  opacity: 1;
+}
+
+nav.black {
+  background: rgba(0,0,0,.8);
+  height: 80px;
+  padding: 10px 50px;
+}
+
+nav ul  {
+  float: right;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+nav ul li {
+  list-style: none;
+  margin-top: 25px;
+  line-height: none;
+  font-size: 20px;
+  color: white;
+  padding: 5px 15px;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: 1s;
+  text-shadow: 0 0 10px #000;
+}
+
+nav.black ul li{
+  color: #fff;
+  line-height: 20px;
+}
+
+nav ul li a.active,
+nav ul li a:hover{
+  color: orange;
+}
+
+nav ul li.active,
+nav ul li:hover{
+  color: orange;
+}
