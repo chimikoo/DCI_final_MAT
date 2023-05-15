@@ -2,8 +2,8 @@ const video = document.getElementById("background-video");
 const container = document.getElementById("scroll-listener");
 const button = document.getElementById("back-to-top-button");
 const navbar = document.getElementById("nav");
+const social = document.getElementById("part7");
 let scrollTop;
-
 
 const scrollFunction = () => {
   if (scrollTop > 100) {
@@ -21,7 +21,6 @@ const changeNav = () => {
   }
 };
 
-
 container.addEventListener("scroll", () => {
   scrollTop = container.scrollTop;
   scrollFunction();
@@ -35,14 +34,25 @@ button.addEventListener("click", () => {
   });
 });
 
+nav.addEventListener("click", (event) => {
+  if (event.target.tagName === "LI") {
+    let targetElement = event.target.getAttribute("target");
+    container.scrollTo({
+      top: document.getElementById(targetElement).offsetTop,
+      left: 0,
+      behavior: "smooth",
+    });
+  }
+});
+
 /* This function slows down the video by 15% 1 being 100% */
 
 video.playbackRate = 0.85;
 
 /* Auto-scroller */
 
-$(document).ready(function(){
-  $('.sliders').slick({
+$(document).ready(function () {
+  $(".sliders").slick({
     autoplay: true,
     autoplaySpeed: 1000,
     dots: true,
@@ -50,6 +60,6 @@ $(document).ready(function(){
     infinite: true,
     speed: 500,
     slidesToShow: 1,
-    slidesToScroll: 1
+    slidesToScroll: 1,
   });
 });
